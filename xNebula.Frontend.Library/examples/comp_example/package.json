@@ -1,0 +1,21 @@
+{
+  "name": "comp_example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@xnebula/components": "workspace:^",
+    "@xnebula/vchart": "workspace:^",
+    "@xnebula/vtable": "workspace:^",
+    "vue": "~3.4.32"
+  },
+  "devDependencies": {
+    "@rollup/plugin-virtual": "~3.0.2",
+    "@vitejs/plugin-vue": "~5.0.5",
+    "vite": "~5.3.1"
+  }
+}

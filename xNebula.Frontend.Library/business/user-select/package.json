@@ -1,0 +1,32 @@
+{
+  "name": "@xnebula/user-select",
+  "version": "1.0.4",
+  "description": "用户选择组件",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vue": ">=3"
+  },
+  "dependencies": {
+    "@xnebula/components": "workspace:^"
+  },
+  "devDependencies": {
+    "vue": "~3.4.32"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.umd.js",
+  "style": "./dist/index.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/*": "./dist/*"
+  }
+}

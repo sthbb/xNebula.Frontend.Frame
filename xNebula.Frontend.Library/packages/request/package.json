@@ -1,0 +1,25 @@
+{
+  "name": "@xnebula/request",
+  "version": "1.0.9",
+  "description": "request",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "dependencies": {
+    "axios": "1.7.2"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.umd.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/*": "./dist/*"
+  }
+}

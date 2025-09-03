@@ -1,0 +1,352 @@
+{
+  "ctype": "c-page",
+  "body": [
+    {
+      "ctype": "c-button",
+      "content": "click_me",
+      "events": {
+        "click": {
+          "actions": [
+            {
+              "actionType": "component",
+              "componentId": "list-table",
+              "methodName": "execMethod",
+              "args": {
+                "methodName": "addRecords",
+                "methodArgs": [
+                  [
+                    {
+                      "department": "BBBBBBBBBB",
+                      "total_children": 88888,
+                      "monthly_expense": "$88888",
+                      "new_hires_this_month": 88888,
+                      "resignations_this_month": 88888,
+                      "complaints_and_suggestions": 88888
+                    },
+                    {
+                      "department": "GGGGGGGGGGG",
+                      "total_children": 66666,
+                      "monthly_expense": "$66666",
+                      "new_hires_this_month": 66666,
+                      "resignations_this_month": 66666,
+                      "complaints_and_suggestions": 66666
+                    }
+                  ],
+                  1
+                ]
+              }
+            },
+            {
+              "actionType": "component",
+              "componentId": "pivot-table",
+              "methodName": "execMethod",
+              "args": {
+                "methodName": "selectCell",
+                "methodArgs": [0, 1]
+              }
+            },
+            {
+              "actionType": "component",
+              "componentId": "pivot-chart",
+              "methodName": "reload"
+            },
+            {
+              "actionType": "component",
+              "componentId": "v-chart0",
+              "methodName": "execMethod",
+              "args": {
+                "methodName": "getCurrentTheme"
+              }
+            },
+            {
+              "actionType": "component",
+              "componentId": "v-chart0",
+              "methodName": "readAttribute",
+              "args": {
+                "attrName": "id"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "v-chart0",
+      "ctype": "c-x-v-chart",
+      "style": {
+        "width": "100%",
+        "height": "326px",
+        "margin-top": "16px"
+      },
+      "options": {},
+      "spec": {
+        "data": {},
+        "type": "line",
+        "xField": "year",
+        "yField": "count",
+        "seriesField": "medalType",
+        "invalidType": "link"
+      },
+      "vChartEvents": [
+        {
+          "event": "pointerdown",
+          "query": {
+            "nodeName": "axis-label"
+          },
+          "callback": "${EXECFUNCTION(evt.event.getData).event}"
+        }
+      ],
+      "dataSource": {
+        "method": "get",
+        "url": "/public/data/v_chart.json",
+        "repFormat": {
+          "records": "${spec.data}"
+        },
+        "atype": "restful",
+        "init": true
+      }
+    },
+    {
+      "id": "list-table0",
+      "ctype": "c-x-v-list-table",
+      "style": {
+        "width": "100%",
+        "height": "326px",
+        "margin-top": "16px"
+      },
+      "options": "listTableOptions0",
+      "dataSource": {
+        "method": "get",
+        "url": "/public/data/list_table.json",
+        "repFormat": {
+          "records": "${list}"
+        },
+        "atype": "restful",
+        "init": true
+      },
+      "events": {
+        "CLICK_CELL": {
+          "actions": [
+            {
+              "actionType": "dialog",
+              "dialog": {
+                "title": "this_is_a_dialog",
+                "body": [
+                  {
+                    "ctype": "tpl",
+                    "tpl": "<p> data.evt.event.getData().event.originData 的值：<%= JSON.stringify(data.evt.event.getData().event.originData) %></p>"
+                  },
+                  {
+                    "ctype": "c-action",
+                    "content": "close",
+                    "actionType": "closeDialog"
+                  },
+                  {
+                    "ctype": "c-button",
+                    "content": "ok",
+                    "events": {
+                      "click": {
+                        "actions": [
+                          {
+                            "actionType": "toast",
+                            "args": "aaaaaaaaaaaa"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "ctype": "c-action",
+                    "content": "oko",
+                    "actionType": "ajax",
+                    "api": {
+                      "atype": "restful",
+                      "method": "post",
+                      "reqData": {
+                        "MODEL_ID": "${MODEL_ID}"
+                      },
+                      "url": "/api/EqpManagement/DeleteEqpModel"
+                    },
+                    "confirm": {
+                      "message": "${T('tb_menu_del_data')}"
+                    },
+                    "reload": "eqpModel"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "list-table",
+      "ctype": "c-x-v-list-table",
+      "wrapperCustomStyle": {
+        "width": "100%",
+        "height": "326px",
+        "margin-top": "16px"
+      },
+      "options": "listTableOptions",
+      "dataSource": {
+        "method": "get",
+        "url": "/public/data/list_table.json",
+        "repFormat": {
+          "records": "${list}"
+        },
+        "atype": "restful",
+        "init": true
+      },
+      "events": {
+        "CLICK_CELL": {
+          "actions": [
+            {
+              "actionType": "dialog",
+              "dialog": {
+                "title": "this_is_a_dialog",
+                "body": [
+                  {
+                    "ctype": "tpl",
+                    "tpl": "<p> data.evt.event.getData().event.originData 的值：<%= JSON.stringify(data.evt.event.getData().event.originData) %></p>"
+                  },
+                  {
+                    "ctype": "c-action",
+                    "content": "close",
+                    "actionType": "closeDialog"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "pivot-table",
+      "ctype": "c-x-v-pivot-table",
+      "wrapperCustomStyle": {
+        "width": "100%",
+        "height": "620px",
+        "margin-top": "16px"
+      },
+      "options": "pivotTableOptions",
+      "dataSource": {
+        "method": "get",
+        "url": "/public/data/pivot_table.json",
+        "repFormat": {
+          "records": "${list}"
+        },
+        "atype": "restful",
+        "init": true
+      },
+      "events": {
+        "CLICK_CELL": {
+          "actions": [
+            {
+              "actionType": "dialog",
+              "dialog": {
+                "title": "this_is_a_dialog",
+                "body": [
+                  {
+                    "ctype": "tpl",
+                    "tpl": "<p> data.evt.event.getData().event 的值：<%= JSON.stringify(data.evt.event.getData()) %></p>"
+                  },
+                  {
+                    "ctype": "c-action",
+                    "content": "close",
+                    "actionType": "closeDialog"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "pivot-chart",
+      "ctype": "c-x-v-pivot-chart",
+      "wrapperCustomStyle": {
+        "width": "100%",
+        "height": "800px",
+        "margin-top": "16px"
+      },
+      "options": "pivotChartOptions",
+      "dataSource": {
+        "method": "get",
+        "url": "/public/data/pivot_chart.json",
+        "repFormat": {
+          "records": "${list}"
+        },
+        "atype": "restful",
+        "init": true
+      },
+      "events": {
+        "CLICK_CELL": {
+          "actions": [
+            {
+              "actionType": "dialog",
+              "dialog": {
+                "title": "this_is_a_dialog",
+                "body": [
+                  {
+                    "ctype": "tpl",
+                    "tpl": "<p> data.evt.event.getData().event.row 的值：${EXECFUNCTION(evt.event.getData,1,2,3).event.row}</p>"
+                  },
+                  {
+                    "ctype": "c-action",
+                    "content": "close",
+                    "actionType": "closeDialog"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "VCHART_EVENT_TYPE": {
+          "actions": [
+            {
+              "actionType": "dialog",
+              "dialog": {
+                "title": "this_is_a_dialog",
+                "body": [
+                  {
+                    "ctype": "tpl",
+                    "tpl": "<p> data.evt.event.getData().event.eventName 的值：${EXECFUNCTION(evt.event.getData,1,2,3).event.eventName}</p>"
+                  },
+                  {
+                    "ctype": "c-action",
+                    "content": "close",
+                    "actionType": "closeDialog"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "VCHART-pointerdown": {
+          "actions": [
+            {
+              "actionType": "dialog",
+              "dialog": {
+                "title": "this_is_a_dialog",
+                "body": [
+                  {
+                    "ctype": "tpl",
+                    "tpl": "<p> data.evt.event.getData() 的值：${EXECFUNCTION(evt.event.getData,1,2,3)}</p>"
+                  },
+                  {
+                    "ctype": "c-action",
+                    "content": "close",
+                    "actionType": "closeDialog"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "isFlex": true
+}

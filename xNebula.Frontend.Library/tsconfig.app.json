@@ -1,0 +1,52 @@
+{
+  "include": [
+    "packages/**/*.vue",
+    "packages/**/*.ts",
+    "packages/**/*.json",
+    "business/**/*.vue",
+    "business/**/*.ts",
+    "business/**/*.json",
+    "plugin/**/*.vue",
+    "plugin/**/*.ts",
+    "plugin/**/*.json",
+    "examples/**/*.vue",
+    "examples/**/*.ts",
+    "examples/**/*.json"
+  ],
+  "exclude": [
+    "packages/*/dist/**",
+    "business/*/dist/**",
+    "plugin/*/dist/**",
+    "examples/*/dist/**",
+    "tools/parse-locales/**",
+    "business/minio-upload/**",
+    "business/minio-upload-old/**",
+    "business/secs-viewer/**"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": [],
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "noImplicitThis": true,
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    // "esModuleInterop": true, // Unsupported export "axios":
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "baseUrl": "."
+  }
+}

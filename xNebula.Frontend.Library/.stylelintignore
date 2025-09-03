@@ -1,0 +1,8 @@
+logs
+node_modules
+coverage
+dist
+business/minio-upload/es
+business/minio-upload-old/es
+business/secs-viewer/es
+

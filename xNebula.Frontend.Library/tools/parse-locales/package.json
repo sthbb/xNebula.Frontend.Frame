@@ -1,0 +1,33 @@
+{
+  "name": "@xnebula/parse-locales",
+  "version": "1.0.6",
+  "description": "Parse locales",
+  "type": "module",
+  "bin": {
+    "parse-locales": "bin/parse-locales.js"
+  },
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0",
+    "npm": ">=8.0.0"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rimraf dist && rollup --config rollup.config.js",
+    "test": "node bin/parse-locales --api=http://192.168.1.83:8111/api/frame/client/i18n?lang=zh_CN"
+  },
+  "dependencies": {
+    "yargs-parser": "21.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "26.0.1",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "json-format": "^1.0.1",
+    "rimraf": "5.0.7",
+    "rollup": "4.18.0"
+  }
+}

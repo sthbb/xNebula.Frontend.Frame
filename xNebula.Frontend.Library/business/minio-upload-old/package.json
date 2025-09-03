@@ -1,0 +1,38 @@
+{
+  "name": "@xnebula/minio-upload-old",
+  "version": "1.0.1",
+  "description": "xnebula minio上传组件【老版本】",
+  "type": "module",
+  "files": [
+    "es"
+  ],
+  "main": "./es/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./es/index.mjs"
+    },
+    "./index.css": {
+      "import": "./es/index.css"
+    }
+  },
+  "sideEffects": [
+    "es/*"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "@xnebula/common": "^0.0.14",
+    "element-plus": "^2.3.7",
+    "spark-md5": "^3.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "sass": "^1.69.7",
+    "vite": "^5.0.8",
+    "vue": "^3.4.6"
+  }
+}

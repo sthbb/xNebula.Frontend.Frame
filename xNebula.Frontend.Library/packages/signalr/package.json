@@ -1,0 +1,32 @@
+{
+  "name": "@xnebula/signalr",
+  "version": "1.0.10",
+  "description": "microsoft signalr",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vue": ">=3"
+  },
+  "dependencies": {
+    "@microsoft/signalr": "8.0.0",
+    "mitt": "3.0.1"
+  },
+  "devDependencies": {
+    "vue": "~3.4.32"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.umd.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/*": "./dist/*"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "@xnebula/utils",
+  "version": "1.0.9",
+  "description": "development toolkit",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vue": ">=3"
+  },
+  "dependencies": {
+    "@types/uuid": "9.0.8",
+    "uuid": "9.0.1"
+  },
+  "devDependencies": {
+    "vue": "~3.4.32"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.umd.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/*": "./dist/*"
+  }
+}

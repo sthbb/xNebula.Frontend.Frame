@@ -1,0 +1,31 @@
+{
+  "name": "@xnebula/i18n",
+  "version": "1.0.9",
+  "description": "i18n",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vue": ">=3"
+  },
+  "dependencies": {
+    "vue-i18n": "9.13.1"
+  },
+  "devDependencies": {
+    "vue": "~3.4.32"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.umd.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/*": "./dist/*"
+  }
+}

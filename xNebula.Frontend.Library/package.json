@@ -1,0 +1,80 @@
+{
+  "name": "xnebula.frontend.library",
+  "private": true,
+  "packageManager": "pnpm@9.3.0",
+  "workspaces": [
+    "business/*",
+    "examples/*",
+    "heavies/*",
+    "packages/*",
+    "tools/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "build:base": "pnpm run build:request && pnpm run build:signalr && pnpm run build:router && pnpm run build:i18n && pnpm run build:commons && pnpm run build:utils && pnpm run build:components",
+    "build:request": "pnpm run lint && cross-env MOD_ENV=request vite build",
+    "build:signalr": "pnpm run lint && cross-env MOD_ENV=signalr vite build",
+    "build:router": "pnpm run lint && cross-env MOD_ENV=router vite build",
+    "build:i18n": "pnpm run lint && cross-env MOD_ENV=i18n vite build",
+    "build:utils": "pnpm run lint && cross-env MOD_ENV=utils vite build",
+    "build:commons": "pnpm run lint && cross-env MOD_ENV=commons FORMAT_ENV=es,cjs vite build && cross-env MOD_ENV=commons FORMAT_ENV=umd CLEAR_ENV=0 vite build",
+    "build:components": "pnpm run lint && cross-env MOD_ENV=components FORMAT_ENV=es,cjs vite build && cross-env MOD_ENV=components FORMAT_ENV=umd CLEAR_ENV=0 vite build",
+    "build:vtable": "pnpm run lint && cross-env PKG_ENV=heavies MOD_ENV=vtable FORMAT_ENV=es,cjs vite build && cross-env MOD_ENV=vtable FORMAT_ENV=umd CLEAR_ENV=0 vite build",
+    "build:vtable-lcp": "pnpm run lint && cross-env PKG_ENV=heavies MOD_ENV=vtable-lcp FORMAT_ENV=es,cjs vite build && cross-env MOD_ENV=vtable-lcp FORMAT_ENV=umd CLEAR_ENV=0 vite build",
+    "build:vchart": "pnpm run lint && cross-env PKG_ENV=heavies MOD_ENV=vchart FORMAT_ENV=es,cjs vite build && cross-env MOD_ENV=vchart FORMAT_ENV=umd CLEAR_ENV=0 vite build",
+    "build:vchart-lcp": "pnpm run lint && cross-env PKG_ENV=heavies MOD_ENV=vchart-lcp FORMAT_ENV=es,cjs vite build && cross-env MOD_ENV=vchart-lcp FORMAT_ENV=umd CLEAR_ENV=0 vite build",
+    "build:user-select": "pnpm run lint && cross-env PKG_ENV=business MOD_ENV=user-select FORMAT_ENV=es,cjs vite build && cross-env PKG_ENV=business MOD_ENV=user-select FORMAT_ENV=umd CLEAR_ENV=0 vite build",
+    "build:host-tree": "pnpm run lint && cross-env PKG_ENV=business MOD_ENV=host-tree FORMAT_ENV=es,cjs vite build && cross-env PKG_ENV=business MOD_ENV=host-tree FORMAT_ENV=umd CLEAR_ENV=0 vite build",
+    "lint": "pnpm run prettier && pnpm run stylelint && pnpm run eslint && pnpm run type-check",
+    "prettier": "prettier ./**/*.{cjs,js,jsx,ts,tsx,vue,css,scss,md,json,html,yaml} --write",
+    "stylelint": "stylelint ./**/*.{css,scss,vue} --fix",
+    "eslint": "eslint ./**/*.{cjs,js,jsx,ts,tsx,vue} --fix",
+    "type-check": "vue-tsc --build --force",
+    "lint-staged": "lint-staged",
+    "verify-commit": "node scripts/verifyCommit.js",
+    "pkg:dev": "node scripts/replacePkg.js dev",
+    "pkg:pub": "node scripts/replacePkg.js pub",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky && husky install"
+  },
+  "lint-staged": {
+    "*.{css,scss,vue}": [
+      "stylelint --fix"
+    ],
+    "*.{cjs,js,jsx,ts,tsx,vue}": [
+      "eslint --fix"
+    ],
+    "*.{cjs,js,jsx,ts,tsx,vue,css,scss,md,json,html,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "~20.14.5",
+    "@vitejs/plugin-vue": "~5.0.5",
+    "@vue/eslint-config-prettier": "~9.0.0",
+    "@vue/eslint-config-typescript": "~13.0.0",
+    "chalk": "~5.3.0",
+    "cross-env": "~7.0.3",
+    "eslint": "~8.57.0",
+    "eslint-plugin-vue": "~9.27.0",
+    "husky": "~9.0.11",
+    "lint-staged": "~15.2.7",
+    "postcss": "~8.4.45",
+    "postcss-html": "~1.7.0",
+    "postcss-scss": "~4.0.9",
+    "prettier": "~3.3.3",
+    "sass": "~1.77.8",
+    "stylelint": "~16.6.1",
+    "stylelint-config-standard": "~36.0.0",
+    "stylelint-order": "~6.0.4",
+    "stylelint-scss": "~6.5.1",
+    "typescript": "~5.4.5",
+    "vite": "~5.3.1",
+    "vite-plugin-dts": "~3.9.1",
+    "vue-tsc": "~2.0.29"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "@xnebula/vchart-lcp",
+  "version": "1.0.2",
+  "description": "@xnebula/vchart component of LCP",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@lcp/xrenderer": ">=1",
+    "vue": ">=3"
+  },
+  "dependencies": {
+    "@xnebula/utils": "workspace:^",
+    "@xnebula/vchart": "workspace:^"
+  },
+  "devDependencies": {
+    "@lcp/xrenderer": "^1.0.8",
+    "vue": "~3.4.32"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.umd.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/*": "./dist/*"
+  }
+}
