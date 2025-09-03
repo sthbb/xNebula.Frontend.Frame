@@ -1,0 +1,23 @@
+// BEM
+@mixin b($block) {
+  $B: el + '-' + $block !global;
+  .#{$B} {
+    @content;
+  }
+}
+// dark
+@mixin dark($block) {
+  html.dark {
+    @include b($block) {
+      @content;
+    }
+  }
+}
+
+@mixin html-color($pre, $theme, $block) {
+  #{$pre + '.' + $theme} {
+    @include b($block) {
+      @content;
+    }
+  }
+}

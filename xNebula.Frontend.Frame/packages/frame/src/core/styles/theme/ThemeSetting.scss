@@ -1,0 +1,141 @@
+@use '../prefix.scss' as *;
+
+.#{$prefixCls}setting-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.#{$prefixCls}theme-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 20%);
+
+  .upload {
+    display: inline-flex;
+    margin: 0 12px;
+  }
+}
+.#{$prefixCls}theme-scroll {
+  height: calc(100% - 68px);
+}
+.#{$prefixCls}theme-setting {
+  padding: 4px 12px;
+  margin: 0 !important;
+
+  &.hide {
+    display: none;
+  }
+
+  .label {
+    overflow: hidden;
+    font-size: var(--el-font-size-base);
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &::after {
+      content: ' :';
+    }
+  }
+
+  .input .el-input-number {
+    width: auto;
+
+    .el-input__inner {
+      text-align: left;
+    }
+
+    &.is-controls-right .el-input__wrapper {
+      padding-right: 51px;
+      padding-left: 11px;
+    }
+  }
+
+  .suffix {
+    text-align: left;
+
+    .unit {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 4px;
+      box-shadow: 0 0 0 1px var(--el-input-border-color, var(--el-border-color))
+        inset;
+    }
+
+    .tip {
+      margin-left: 2px;
+      font-size: 18px;
+      color: var(--el-text-color-secondary);
+      vertical-align: middle;
+    }
+  }
+
+  .image {
+    margin-top: 8px;
+    text-align: center;
+    cursor: pointer;
+
+    .el-button {
+      width: 100%;
+    }
+
+    .image-thumb {
+      height: 50px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &.divider {
+    padding-bottom: 16px;
+    margin-bottom: 10px !important;
+    border-bottom: 1px solid var(--el-border-color);
+  }
+}
+.#{$prefixCls}theme-image {
+  cursor: pointer;
+
+  .zoom {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 16px;
+    color: #999;
+  }
+
+  .el-upload--picture-card {
+    display: none;
+  }
+
+  .el-upload-list__item .file {
+    width: 100%;
+  }
+
+  .el-upload-list--picture-card
+    .el-upload-list__item
+    .el-upload-list__item-status-label,
+  .el-upload-list--picture-card
+    .el-upload-list__item:hover
+    .el-upload-list__item-status-labe {
+    opacity: 0;
+
+    &.selected {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  .el-dialog__body {
+    max-height: 500px;
+    overflow: auto;
+  }
+}

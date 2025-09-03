@@ -1,0 +1,76 @@
+@use '../prefix.scss' as *;
+
+.#{$prefixCls}param-setting {
+  height: 100%;
+  margin: 0 -0.75rem;
+}
+.#{$prefixCls}param-action {
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem 0.75rem;
+  box-shadow: 0 3px 3px rgb(0 0 0 / 20%);
+  background-color: #fff;
+}
+.#{$prefixCls}param-scroll {
+  height: calc(100% - 32px);
+}
+.#{$prefixCls}cdn-config,
+.#{$prefixCls}web-config,
+.#{$prefixCls}oth-config {
+  padding: 0 1.25rem;
+
+  .el-card {
+    margin: 10px;
+  }
+
+  h4,
+  .div-title {
+    padding-top: 10px;
+    margin: 0;
+    font-size: large;
+    font-weight: normal;
+  }
+}
+.#{$prefixCls}cdn-config,
+.#{$prefixCls}web-config {
+  .flex {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .el-input {
+      width: 60%;
+    }
+  }
+
+  .label {
+    margin-right: 10px;
+  }
+
+  .i18n-key {
+    font-size: 0.85rem;
+  }
+
+  .tag {
+    margin-left: 10px;
+  }
+}
+.#{$prefixCls}web-config {
+  .image-thumb {
+    height: 60px;
+    background-repeat: no-repeat;
+    background-position: 30% center;
+    background-size: contain;
+    margin-bottom: 12px;
+  }
+}
+.#{$prefixCls}oth-config {
+  .div-remark {
+    margin-left: 10px;
+    font-size: 0.85rem;
+
+    .el-tag {
+      margin-left: 10px;
+    }
+  }
+}

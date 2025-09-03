@@ -1,0 +1,6 @@
+@use '../prefix.scss' as *;
+
+.#{$prefixCls}drawer-enter-active,
+.#{$prefixCls}drawer-leave-active {
+  transition: width var(--el-transition-duration);
+}

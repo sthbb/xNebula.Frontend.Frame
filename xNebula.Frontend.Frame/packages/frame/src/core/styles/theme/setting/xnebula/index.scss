@@ -1,0 +1,14 @@
+@use '../../../prefix.scss' as *;
+@import './color.scss';
+@import '../common/mixin.scss';
+@import './extra.scss';
+
+html.#{$prefixCls}theme-xnebula,
+.#{$prefixCls}overview-wrapper.#{$prefixCls}theme-inner-xnebula {
+  @include set-common-theme();
+}
+@include set-extal-theme(html, #{$prefixCls}#{'theme-xnebula'});
+@include set-extal-theme(
+  #{'.'}#{$prefixCls}#{'overview-wrapper'},
+  #{$prefixCls}#{'theme-inner-xnebula'}
+);

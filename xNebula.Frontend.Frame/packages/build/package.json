@@ -1,0 +1,54 @@
+{
+  "name": "@xnebula/build",
+  "version": "1.0.25",
+  "description": "A plugin build tool",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "xbuild": "bin/xbuild.js"
+  },
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0",
+    "npm": ">=8.0.0"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "client.d.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rimraf dist && pnpm run build-bundle && pnpm run build-types",
+    "build-bundle": "rollup --config rollup.config.ts --configPlugin esbuild",
+    "build-types": "pnpm run build-types-temp && pnpm run build-types-roll",
+    "build-types-temp": "tsc --emitDeclarationOnly --outDir temp",
+    "build-types-roll": "rollup --config rollup.dts.config.ts --configPlugin esbuild && rimraf temp",
+    "test": "node bin/xbuild.js dev --config ./test/config.ts"
+  },
+  "dependencies": {
+    "@rollup/plugin-virtual": "3.0.2",
+    "@rollup/pluginutils": "5.1.0",
+    "@types/lodash": "4.17.6",
+    "@types/node": "20.14.5",
+    "@types/uuid": "9.0.8",
+    "@types/yargs-parser": "21.0.3",
+    "@vitejs/plugin-vue": "5.0.5",
+    "chalk": "5.3.0",
+    "lodash": "4.17.21",
+    "rimraf": "5.0.7",
+    "uuid": "9.0.1",
+    "vite": "5.3.1",
+    "yargs-parser": "21.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "26.0.1",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "esbuild": "0.23.0",
+    "rollup": "4.18.0",
+    "rollup-plugin-dts": "6.1.1",
+    "rollup-plugin-esbuild": "6.1.1",
+    "typescript": "5.4.5"
+  }
+}

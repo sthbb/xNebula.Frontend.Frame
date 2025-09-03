@@ -1,0 +1,72 @@
+@use '../../../prefix.scss' as *;
+html.#{$prefixCls}theme-xnebula,
+.#{$prefixCls}overview-wrapper.#{$prefixCls}theme-inner-xnebula {
+  .el-table,
+  .vxe-table {
+    border-radius: 8px 8px 0 0;
+
+    thead {
+      th {
+        border-right: none;
+        position: relative;
+        background-image: none !important;
+
+        &::after {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 1px;
+          height: 26%;
+          background-color: var(--theme-table-header-color);
+          content: '';
+          transform: translate(-50%, -50%);
+        }
+
+        &:last-child::after {
+          width: 0;
+        }
+      }
+    }
+
+    tbody {
+      tr td:last-child {
+        border-right: none;
+      }
+    }
+
+    .vxe-table--body-wrapper {
+      td:last-child {
+        background-image: none,
+          linear-gradient(
+            var(--vxe-table-border-color),
+            var(--vxe-table-border-color)
+          ) !important;
+      }
+    }
+
+    .el-table__inner-wrapper::after,
+    .el-table__border-left-patch {
+      width: 0;
+    }
+
+    &.el-table--border::before,
+    &.el-table--border::after {
+      width: 0;
+    }
+
+    .vxe-table--header-wrapper {
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  .c-pagination {
+    padding-right: 16px;
+  }
+
+  .vxe-table--border-line {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 8px;
+  }
+}

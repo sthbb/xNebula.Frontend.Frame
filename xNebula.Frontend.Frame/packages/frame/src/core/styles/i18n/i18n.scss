@@ -1,0 +1,51 @@
+@use '../prefix.scss' as *;
+
+.#{$prefixCls}i18n-manage {
+  .search {
+    display: flex;
+    align-items: center;
+
+    & > span {
+      white-space: nowrap;
+    }
+
+    .el-input,
+    .el-select {
+      width: auto;
+      min-width: 20%;
+      margin-right: 12px;
+    }
+  }
+
+  .form {
+    margin-bottom: 12px;
+    margin-left: 10%;
+
+    .el-input {
+      width: 60%;
+    }
+  }
+
+  .table,
+  .table .el-table__inner-wrapper {
+    width: 100%;
+    height: calc(
+      100vh - 132px - var(--theme-two-columns) - var(--theme-tag-view-height) - var(
+          --theme-header-height
+        )
+    );
+  }
+
+  .page {
+    justify-content: flex-end;
+    margin-top: 16px;
+
+    .el-pagination__sizes .el-select {
+      width: 102px;
+    }
+
+    .el-pagination__jump .el-input {
+      width: 45px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use '../prefix.scss' as *;
+
+.#{$prefixCls}theme-overview,
+.#{$prefixCls}overview-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.#{$prefixCls}overview-main,
+.#{$prefixCls}overview-aside {
+  padding: 0;
+  margin: 8px;
+  border: 1px solid var(--el-border-color);
+}

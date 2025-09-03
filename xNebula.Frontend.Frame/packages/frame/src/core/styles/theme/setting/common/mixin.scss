@@ -1,0 +1,39 @@
+@import './index.scss';
+@import '../mixins/var.scss';
+@import '../mixins/mixins.scss';
+
+@mixin set-common-theme {
+  //hex colors
+  @each $type in (primary, success, warning, danger, error, info) {
+    @include set-css-color-type($colors, $type);
+  }
+
+  //--el-box-shadow-#{$type}
+  @include set-component-css-var('box-shadow', $box-shadow);
+
+  // Background --el-bg-color-#{$type}
+  @include set-component-css-var('bg-color', $bg-color);
+
+  // --el-text-color-#{$type}
+  @include set-component-css-var('text-color', $text-color);
+
+  // --el-border-color-#{$type}
+  @include set-component-css-var('border-color', $border-color);
+
+  // Fill --el-fill-color-#{$type}
+  @include set-component-css-var('fill-color', $fill-color);
+  @include set-component-css-var('mask-color', $mask-color);
+}
+
+@mixin set-extal-theme($pre, $theme) {
+  $types: (
+    button: $button,
+    card: $card,
+    empty: $empty,
+  );
+  @each $key, $value in $types {
+    @include html-color($pre, $theme, $key) {
+      @include set-component-css-var($key, $value);
+    }
+  }
+}

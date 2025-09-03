@@ -1,0 +1,44 @@
+{
+  "name": "@xnebula/create-tpl",
+  "version": "1.0.19",
+  "description": "create a plugin template",
+  "type": "module",
+  "bin": {
+    "create-tpl": "bin/create-tpl.js"
+  },
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0",
+    "npm": ">=8.0.0"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "tpl-*",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rimraf dist && rollup --config rollup.config.ts --configPlugin esbuild",
+    "type": "tsc --noEmit",
+    "test": "node bin/create-tpl --dir=../../example"
+  },
+  "dependencies": {
+    "@clack/prompts": "0.7.0",
+    "@types/mustache": "4.2.5",
+    "@types/node": "20.14.5",
+    "@types/yargs-parser": "21.0.3",
+    "chalk": "5.3.0",
+    "execa": "8.0.1",
+    "mustache": "4.2.0",
+    "yargs-parser": "21.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "26.0.1",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "esbuild": "0.23.0",
+    "rimraf": "5.0.7",
+    "rollup": "4.18.0",
+    "rollup-plugin-esbuild": "6.1.1",
+    "typescript": "5.4.5"
+  }
+}

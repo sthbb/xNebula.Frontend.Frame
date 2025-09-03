@@ -1,0 +1,280 @@
+.vxe-form {
+  color: var(--theme-form-color);
+}
+
+.vxe-table {
+  th .vxe-cell {
+    padding: 0 var(--table-head-row-padding) !important;
+  }
+
+  td .vxe-cell {
+    padding: 0 var(--table-body-row-padding) !important;
+  }
+
+  .vxe-header--column {
+    padding: var(--table-head-column-padding) 0 !important;
+    color: var(--theme-table-header-color);
+  }
+
+  .vxe-body--column {
+    padding: var(--table-body-column-padding) 0 !important;
+  }
+
+  .vxe-table--body-wrapper {
+    background-color: var(--theme-table-body-bg);
+  }
+}
+
+.vxe-radio--label,
+.vxe-checkbox--label {
+  color: var(--vxe-font-color);
+}
+
+[class*='vxe-icon-'] {
+  font-size: 12px;
+}
+
+:root {
+  --vxe-font-family: -apple-system, blinkmacsystemfont, 'SourceHanSansSC',
+    'work-sans', 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --vxe-font-size-large: var(--el-font-size-large);
+  --vxe-font-size-medium: var(--el-font-size-medium);
+  --vxe-font-size: var(--el-font-size-base);
+  --vxe-font-size-small: var(--el-font-size-small);
+  --vxe-font-size-mini: var(--el-font-size-extra-small);
+  --vxe-border-radius: var(--el-border-radius-base);
+  --vxe-icon-background-color: var(--el-fill-color-blank);
+  --vxe-font-color: var(--el-text-color-regular);
+  --vxe-primary-color: var(--el-color-primary);
+  --vxe-success-color: var(--el-color-success);
+  --vxe-info-color: var(--el-color-info);
+  --vxe-warning-color: var(--el-color-warning);
+  --vxe-danger-color: var(--el-color-danger);
+  --vxe-font-lighten-color: : var(--el-text-color-regular);
+  --vxe-primary-lighten-color: var(--el-color-primary-light-3);
+  --vxe-success-lighten-color: var(--el-color-success-light-3);
+  --vxe-info-lighten-color: var(--el-color-info-light-3);
+  --vxe-warning-lighten-color: var(--el-color-warning-light-3);
+  --vxe-danger-lighten-color: var(--el-color-danger-light-3);
+  --vxe-font-darken-color: : var(--el-text-color-regular);
+  --vxe-primary-darken-color: var(--el-color-primary-light-3);
+  --vxe-success-darken-color: var(--el-color-success-light-3);
+  --vxe-info-darken-color: var(--el-color-info-light-3);
+  --vxe-warning-darken-color: var(--el-color-warning-light-3);
+  --vxe-danger-darken-color: var(--el-color-danger-light-3);
+  --vxe-font-disabled-color: var(--el-text-color-placeholder);
+  --vxe-primary-disabled-color: var(--el-color-primary-light-5);
+  --vxe-success-disabled-color: var(--el-color-success-light-5);
+  --vxe-info-disabled-color: var(--el-color-info-light-5) t;
+  --vxe-warning-disabled-color: var(--el-color-warning-light-5);
+  --vxe-danger-disabled-color: var(--el-color-danger-light-5);
+  --vxe-input-border-color: var(--el-border-color);
+  --vxe-input-disabled-color: var(--el-fill-color-light);
+  --vxe-input-disabled-background-color: var(--el-fill-color-light);
+  --vxe-input-placeholder-color: var(--el-text-color-placeholder);
+  --vxe-table-popup-border-color: var(--el-border-color-lighter);
+  --vxe-table-header-font-color: : var(--el-text-color-regular);
+  --vxe-table-footer-font-color: : var(--el-text-color-regular);
+  --vxe-table-border-radius: var(--vxe-border-radius);
+  --vxe-table-border-width: 1px;
+  --vxe-table-border-color: var(--el-border-color-lighter);
+  --vxe-table-resizable-line-color: #d9dddf;
+  --vxe-table-resizable-drag-line-color: var(--vxe-primary-color);
+  --vxe-table-header-background-color: var(--theme-table-header-bg);
+  --vxe-table-body-background-color: var(--theme-table-body-bg);
+  --vxe-table-footer-background-color: var(--theme-table-body-bg);
+  --vxe-table-tree-node-line-color: var(--el-border-color);
+  --vxe-table-tree-node-line-style: dotted;
+  --vxe-table-header-font-weight: 700;
+  --vxe-table-row-height-default: 48px;
+  --vxe-table-row-height-medium: 42px;
+  --vxe-table-row-height-small: 40px;
+  --vxe-table-row-height-mini: 36px;
+  --vxe-table-row-line-height: 22px;
+  --vxe-table-row-hover-background-color: var(--el-fill-color-light);
+  --vxe-table-row-striped-background-color: var(--el-fill-color-lighter);
+  --vxe-table-row-hover-striped-background-color: var(--el-fill-color-light);
+  --vxe-table-row-radio-checked-background-color: var(
+    --el-color-warning-light-7
+  );
+  --vxe-table-row-hover-radio-checked-background-color: var(
+    --el-color-warning-light-5
+  );
+  --vxe-table-row-checkbox-checked-background-color: var(
+    --el-color-warning-light-7
+  );
+  --vxe-table-row-hover-checkbox-checked-background-color: var(
+    --el-color-warning-light-5
+  );
+  --vxe-table-row-current-background-color: #e6f7ff;
+  --vxe-table-row-hover-current-background-color: var(
+    --el-color-primary-light-7
+  );
+  --vxe-table-column-padding-default: 13px 0;
+  --vxe-table-column-padding-medium: 11px 0;
+  --vxe-table-column-padding-small: 9px 0;
+  --vxe-table-column-padding-mini: 7px 0;
+  --vxe-table-column-hover-background-color: #d7effb;
+  --vxe-table-column-current-background-color: var(--el-color-primary-light-7);
+  --vxe-table-column-icon-border-color: var(--el-text-color-placeholder);
+  --vxe-table-column-icon-border-hover-color: #515a6e;
+  --vxe-table-cell-placeholder-color: var(--el-text-color-placeholder);
+  --vxe-table-cell-padding-left: 10px;
+  --vxe-table-cell-padding-right: 10px;
+  --vxe-table-cell-input-height-default: 42px;
+  --vxe-table-cell-input-height-medium: 38px;
+  --vxe-table-cell-input-height-small: 34px;
+  --vxe-table-cell-input-height-mini: 30px;
+  --vxe-table-cell-dirty-width: 5px;
+  --vxe-table-cell-dirty-update-color: var(--el-color-danger);
+  --vxe-table-cell-dirty-insert-color: var(--el-color-success-dark-2);
+  --vxe-table-cell-area-border-color: var(--vxe-primary-color);
+  --vxe-table-cell-area-border-width: 1px;
+  --vxe-table-cell-main-area-extension-border-color: var(--el-bg-color);
+  --vxe-table-cell-main-area-extension-background-color: var(
+    --vxe-primary-color
+  );
+  --vxe-table-cell-extend-area-border-width: 2px;
+  --vxe-table-cell-copy-area-border-width: 3px;
+  --vxe-table-cell-active-area-border-width: 2px;
+  --vxe-table-cell-copy-area-border-color: var(
+    --vxe-table-cell-area-border-color
+  );
+  --vxe-table-cell-extend-area-border-color: var(
+    --vxe-table-cell-area-border-color
+  );
+  --vxe-table-cell-active-area-border-color: var(
+    --vxe-table-cell-area-border-color
+  );
+  --vxe-table-cell-area-background-color: var(--el-mask-color-extra-light);
+  --vxe-table-checkbox-range-border-width: 1px;
+  --vxe-table-checkbox-range-border-color: var(--el-color-primary-dark-2);
+  --vxe-table-checkbox-range-background-color: var(--el-mask-color-extra-light);
+  --vxe-table-fixed-left-scrolling-box-shadow: var(--el-box-shadow-light);
+  --vxe-table-fixed-right-scrolling-box-shadow: var(--el-box-shadow-light);
+  --vxe-table-filter-panel-background-color: var(--el-bg-color);
+  --vxe-table-menu-item-width: 178px;
+  --vxe-table-menu-background-color: var(--el-bg-color);
+  --vxe-loading-color: var(--vxe-primary-color);
+  --vxe-loading-background-color: var(--el-mask-color);
+  --vxe-loading-z-index: 999;
+  --vxe-table-validate-error-color: var(--el-color-danger);
+  --vxe-table-validate-error-background-color: var(
+    --vxe-table-body-background-color
+  );
+  --vxe-grid-maximize-background-color: var(--el-bg-color);
+  --vxe-toolbar-background-color: var(--el-bg-color);
+  --vxe-toolbar-custom-active-background-color: var(--el-bg-color-page);
+  --vxe-toolbar-panel-background-color: var(--el-bg-color);
+  --vxe-tooltip-dark-color: var(--el-text-color-primary);
+  --vxe-tooltip-dark-background-color: var(--el-bg-color);
+  --vxe-tooltip-light-background-color: var(--el-bg-color);
+  --vxe-pager-background-color: var(--el-bg-color);
+  --vxe-pager-perfect-background-color: var(--el-bg-color);
+  --vxe-pager-perfect-button-background-color: var(--el-fill-color-light);
+  --vxe-modal-header-background-color: var(--el-bg-color);
+  --vxe-modal-body-background-color: var(--el-bg-color);
+  --vxe-modal-border-color: var(--el-border-color-lighter);
+  --vxe-checkbox-font-size-default: var(--vxe-font-size);
+  --vxe-checkbox-font-size-medium: var(--vxe-font-size-medium);
+  --vxe-checkbox-font-size-small: var(--vxe-font-size-small);
+  --vxe-checkbox-font-size-mini: var(--vxe-font-size-mini);
+  --vxe-checkbox-checked-width: 0.32em;
+  --vxe-checkbox-checked-height: 0.64em;
+  --vxe-checkbox-indeterminate-width: 0.6em;
+  --vxe-checkbox-indeterminate-height: 2px;
+  --vxe-checkbox-border-width: 2px;
+  --vxe-checkbox-border-radius: 2px;
+  --vxe-checkbox-icon-background-color: var(--el-bg-color);
+  --vxe-checkbox-checked-icon-border-color: var(--el-bg-color);
+  --vxe-checkbox-indeterminate-icon-background-color: var(
+    --el-fill-color-blank
+  );
+  --vxe-radio-font-size-default: var(--vxe-checkbox-font-size-default);
+  --vxe-radio-font-size-medium: var(--vxe-checkbox-font-size-medium);
+  --vxe-radio-font-size-small: var(--vxe-checkbox-font-size-small);
+  --vxe-radio-font-size-mini: var(--vxe-checkbox-font-size-mini);
+  --vxe-radio-border-width: var(--vxe-checkbox-border-width);
+  --vxe-radio-icon-background-color: var(--el-bg-color);
+  --vxe-radio-checked-icon-background-color: var(--el-bg-color);
+  --vxe-radio-indeterminate-icon-background-color: var(--el-fill-color-blank);
+  --vxe-radio-button-default-background-color: var(--el-fill-color-blank);
+  --vxe-button-max-width: 500px;
+  --vxe-button-default-background-color: var(--el-bg-color);
+  --vxe-button-dropdown-panel-background-color: var(
+    --vxe-button-default-background-color
+  );
+  --vxe-button-height-default: 34px;
+  --vxe-button-height-medium: 32px;
+  --vxe-button-height-small: 30px;
+  --vxe-button-height-mini: 28px;
+  --vxe-button-round-border-radius-default: 17px;
+  --vxe-button-round-border-radius-medium: 16px;
+  --vxe-button-round-border-radius-small: 15px;
+  --vxe-button-round-border-radius-mini: 14px;
+  --vxe-input-background-color: var(--el-bg-color);
+  --vxe-input-panel-background-color: var(--vxe-input-background-color);
+  --vxe-input-number-disabled-color: var(--el-disabled-bg-color);
+  --vxe-input-date-festival-color: var(--el-text-color-secondary);
+  --vxe-input-date-festival-important-color: var(--vxe-primary-color);
+  --vxe-input-date-notice-background-color: var(--el-color-danger);
+  --vxe-input-date-picker-hover-background-color: var(--el-bg-color-page);
+  --vxe-input-date-picker-selected-color: var(--el-bg-color);
+  --vxe-input-date-time-confirm-button-color: var(--el-bg-color);
+  --vxe-input-date-picker-festival-selected-color: var(
+    --vxe-input-date-picker-selected-color
+  );
+  --vxe-input-date-picker-notice-selected-background-color: var(
+    --vxe-input-date-picker-selected-color
+  );
+  --vxe-input-date-extra-color: var(--el-color-success);
+  --vxe-input-date-extra-important-color: var(--el-color-danger);
+  --vxe-input-date-title-height-default: 30px;
+  --vxe-input-date-title-height-medium: 29px;
+  --vxe-input-date-title-height-small: 28px;
+  --vxe-input-date-title-height-mini: 26px;
+  --vxe-input-date-time-week-row-height-default: 38px;
+  --vxe-input-date-time-week-row-height-medium: 36px;
+  --vxe-input-date-time-week-row-height-small: 34px;
+  --vxe-input-date-time-week-row-height-mini: 32px;
+  --vxe-input-date-month-year-row-height-default: 48px;
+  --vxe-input-date-month-year-row-height-medium: 46px;
+  --vxe-input-date-month-year-row-height-small: 44px;
+  --vxe-input-date-month-year-row-height-mini: 42px;
+  --vxe-input-date-quarter-row-height-default: 60px;
+  --vxe-input-date-quarter-row-height-medium: 58px;
+  --vxe-input-date-quarter-row-height-small: 56px;
+  --vxe-input-date-quarter-row-height-mini: 54px;
+  --vxe-input-height-default: var(--vxe-button-height-default);
+  --vxe-input-height-medium: var(--vxe-button-height-medium);
+  --vxe-input-height-small: var(--vxe-button-height-small);
+  --vxe-input-height-mini: var(--vxe-button-height-mini);
+  --vxe-input-count-color: var(--el-text-color-secondary);
+  --vxe-input-count-background-color: var(--el-bg-color);
+  --vxe-input-count-error-color: var(--vxe-table-validate-error-color);
+  --vxe-textarea-line-height: 1.5715;
+  --vxe-textarea-background-color: var(--el-bg-color);
+  --vxe-form-item-min-height-default: 36px;
+  --vxe-form-item-min-height-medium: 34px;
+  --vxe-form-item-min-height-small: 32px;
+  --vxe-form-item-min-height-mini: 30px;
+  --vxe-form-background-color: var(--el-bg-color);
+  --vxe-form-validate-error-color: var(--vxe-table-validate-error-color);
+  --vxe-form-validate-error-background-color: inherit;
+  --vxe-select-option-height-default: 30px;
+  --vxe-select-option-height-medium: 28px;
+  --vxe-select-option-height-small: 26px;
+  --vxe-select-option-height-mini: 24px;
+  --vxe-select-option-hover-background-color: var(--el-fill-color-light);
+  --vxe-select-panel-background-color: var(--el-bg-color);
+  --vxe-select-empty-color: var(--el-text-color-placeholder);
+  --vxe-optgroup-title-color: var(--el-text-color-secondary);
+  --vxe-switch-font-color: var(--el-text-color-primary);
+  --vxe-switch-icon-background-color: var(--el-color-white);
+  --vxe-switch-open-background-color: var(--vxe-primary-color);
+  --vxe-switch-close-background-color: var(--el-border-color);
+  --vxe-switch-disabled-background-color: var(--el-color-primary);
+  --vxe-pulldown-panel-background-color: var(--el-bg-color);
+}

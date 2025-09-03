@@ -1,0 +1,39 @@
+@use '../prefix.scss' as *;
+
+.#{$prefixCls}plugin-manage {
+  .search {
+    display: flex;
+    align-items: center;
+
+    & > span {
+      white-space: nowrap;
+    }
+
+    .el-input {
+      width: 240px;
+    }
+  }
+
+  .table,
+  .table .el-table__inner-wrapper {
+    width: 100%;
+    height: calc(
+      100vh - 84px - var(--theme-two-columns) - var(--theme-tag-view-height) - var(
+          --theme-header-height
+        )
+    );
+  }
+
+  .page {
+    justify-content: flex-end;
+    margin-top: 16px;
+
+    .el-pagination__sizes .el-select {
+      width: 102px;
+    }
+
+    .el-pagination__jump .el-input {
+      width: 45px;
+    }
+  }
+}

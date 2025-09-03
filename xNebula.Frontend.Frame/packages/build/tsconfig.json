@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "useUnknownInCatchVariables": false,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*", "client.d.ts"],
+  "exclude": ["dist/**/*"]
+}

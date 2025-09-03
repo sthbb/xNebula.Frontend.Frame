@@ -1,0 +1,53 @@
+@use 'sass:math';
+@use 'sass:string' as str;
+
+// mix color
+@function mix-color($color1, $color2, $number) {
+  $percentage1: math.percentage(math.div($number, 100));
+  $percentage2: math.percentage(calc(1 - math.div($number, 100)));
+  @return color-mix(in srgb, $color1 $percentage1, $color2 $percentage2);
+}
+
+// hex to rgb
+@function get-color($color) {
+  @if str.slice($color, 1, 1) == '#' {
+    // 检查字符串的第一个字符是否为 "#"
+    $color: str.slice($color, 2); // 如果是, 去除 "#"
+  }
+  @if str.length($color) == 6 {
+    // 检查字符串长度是否为 6(例如 "ff0000")
+    $red: str.slice($color, 1, 2); // 提取红色通道值
+    $green: str.slice($color, 3, 4); // 提取绿色通道值
+    $blue: str.slice($color, 5, 6); // 提取蓝色通道值
+    @return rgb($red, $green, $blue);
+  }
+  @return $color;
+}
+
+// join name
+@function joinVarName($list) {
+  $name: '--el';
+  @each $item in $list {
+    @if $item != '' {
+      $name: $name + '-' + $item;
+    }
+  }
+  @return $name;
+}
+
+// getCssVarName('button', 'text-color') => '--el-button-text-color'
+@function getCssVarName($args...) {
+  @return joinVarName($args);
+}
+
+//mix to hex to avoid overlay issues
+@function getHex($keys, $mix-color) {
+  @each $key, $val in $keys {
+    $keys: map.merge(
+      $keys,
+      (
+        $key: mix-overlay-color($val, map.get($mix-color, '')),
+      )
+    ) !global;
+  }
+}

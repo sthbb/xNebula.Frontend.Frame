@@ -1,0 +1,19 @@
+@use '../prefix.scss' as *;
+
+.#{$prefixCls}theme-model {
+  display: flex;
+  flex-direction: column;
+}
+.#{$prefixCls}model-toolbar,
+.#{$prefixCls}model-body {
+  width: calc(100%);
+  padding: 12px;
+  background: var(--el-bg-color);
+  border-radius: 8px;
+}
+.#{$prefixCls}model-body {
+  margin-top: calc(var(--theme-two-columns) - 24px);
+}
+.#{$prefixCls}model-toolbar .el-form {
+  margin-bottom: -1rem;
+}

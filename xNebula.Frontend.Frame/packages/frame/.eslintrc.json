@@ -1,0 +1,18 @@
+{
+  "globals": {
+    "__PUBLIC_PATH__": true,
+    "__PLUGIN_PREFIX__": true,
+    "__FRAME_VERSION__": true,
+    "__FRAME_MODE__": true
+  },
+  "extends": ["plugin:vue/vue3-essential"],
+  "parserOptions": {
+    "extraFileExtensions": [".vue"],
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "vue/multi-word-component-names": "off"
+  }
+}

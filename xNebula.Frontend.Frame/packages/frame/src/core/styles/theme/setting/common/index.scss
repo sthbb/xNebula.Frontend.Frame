@@ -1,0 +1,193 @@
+@use 'sass:map' as map;
+@use './var.scss' as common;
+@use '../mixins/mixins.scss' as *;
+@use '../mixins/function.scss' as *;
+@use '../color/index.scss' as *;
+
+@function baseColor($colors, $type) {
+  @return ('base': map.get($colors, $type, 'base'));
+}
+
+$colors: () !default;
+@each $type in common.$types {
+  $colors: map.deep-merge(
+    (
+      $type: baseColor($colors, $type),
+    ),
+    $colors
+  ) !global;
+}
+
+@mixin set-color-mix-level(
+  $type,
+  $number,
+  $mode: 'light',
+  $mix-color: map.get($colors, 'white')
+) {
+  // hex mix color
+  $colors: map.deep-merge(
+    (
+      $type: (
+        '#{$mode}-#{$number}': #{mix-color(
+            $mix-color,
+            map.get($colors, $type, 'base'),
+            calc($number * 10)
+          )},
+      ),
+    ),
+    $colors
+  ) !global;
+}
+
+// Background
+$bg-color: () !default;
+$bg-color: map.merge(
+  (
+    'page': map.get($bg-color, 'page'),
+    '': map.get($bg-color, ''),
+    'overlay': map.get($bg-color, 'overlay'),
+  ),
+  $bg-color
+);
+
+// dark-mode
+@each $type in common.$types {
+  @for $i from 1 through 9 {
+    @include set-color-mix-level($type, $i, 'light', map.get($bg-color, ''));
+  }
+}
+@each $type in common.$types {
+  @include set-color-mix-level($type, 2, 'dark', map.get($colors, 'white'));
+}
+
+// border
+$border-color: () !default;
+$border-color-base: map.get($border-color, 'base');
+$border-color: map.merge(
+  (
+    'darker': map.get($border-color, 'darker'),
+    'dark': map.get($border-color, 'dark'),
+    '': map.get($border-color, ''),
+    'light': map.get($border-color, 'light'),
+    'lighter': map.get($border-color, 'lighter'),
+    'extra-light': map.get($border-color, 'extra-light'),
+  ),
+  $border-color
+);
+// mix to hex to avoid overlay issues
+@each $key, $val in $border-color {
+  $border-color: map.merge(
+    $border-color,
+    (
+      $key: mix-overlay-color($val, map.get($bg-color, '')),
+    )
+  ) !global;
+}
+
+// Box-shadow
+$box-shadow: () !default;
+$box-shadow: map.merge(
+  (
+    '': map.get($box-shadow, ''),
+    'light': map.get($box-shadow, 'light'),
+    'lighter': map.get($box-shadow, 'lighter'),
+    'dark': map.get($box-shadow, 'dark'),
+  ),
+  $box-shadow
+);
+
+// fill
+$fill-color-base: map.get($fill-color, 'base');
+$fill-color: () !default;
+$fill-color: map.merge(
+  (
+    'darker': map.get($fill-color, 'darker'),
+    'dark': map.get($fill-color, 'light'),
+    '': map.get($fill-color, ''),
+    'light': map.get($fill-color, 'light'),
+    'lighter': map.get($fill-color, 'lighter'),
+    'extra-light': map.get($fill-color, 'extra-light'),
+    'blank': map.get($fill-color, 'blank'),
+  ),
+  $fill-color
+);
+// mix to hex to avoid overlay issues
+@each $key, $val in $fill-color {
+  @if ($key != 'blank') {
+    $fill-color: map.merge(
+      $fill-color,
+      (
+        $key: mix-overlay-color($val, map.get($bg-color, '')),
+      )
+    ) !global;
+  }
+}
+
+// text
+$text-color-base: map.get($text-color, 'base');
+$text-color: () !default;
+$text-color: map.merge(
+  (
+    'primary': map.get($text-color, 'primary'),
+    'regular': map.get($text-color, 'regular'),
+    'secondary': map.get($text-color, 'secondary'),
+    'placeholder': map.get($text-color, 'placeholder'),
+    'disabled': map.get($text-color, 'disabled'),
+  ),
+  $text-color
+);
+// mix to hex to avoid overlay issues
+@each $key, $val in $text-color {
+  $text-color: map.merge(
+    $text-color,
+    (
+      $key: mix-overlay-color($val, map.get($bg-color, '')),
+    )
+  ) !global;
+}
+
+// mask
+$mask-color: () !default;
+$mask-color: map.merge(
+  (
+    '': map.get($mask-color, ''),
+    'extra-light': map.get($mask-color, 'extra-light'),
+  ),
+  $mask-color
+);
+
+// Button
+$button: () !default;
+$button: map.merge(
+  (
+    'disabled-text-color': map.get($button, ''),
+  ),
+  $button
+);
+
+// card
+$card: () !default;
+$card: map.merge(
+  (
+    'bg-color': getCssVar('bg-color', 'overlay'),
+  ),
+  $card
+);
+
+// Empty
+$empty: () !default;
+$empty: map.merge(
+  (
+    'fill-color-0': map.get($empty, '0'),
+    'fill-color-1': map.get($empty, '1'),
+    'fill-color-2': map.get($empty, '2'),
+    'fill-color-3': map.get($empty, '3'),
+    'fill-color-4': map.get($empty, '4'),
+    'fill-color-5': map.get($empty, '5'),
+    'fill-color-6': map.get($empty, '6'),
+    'fill-color-7': map.get($empty, '7'),
+    'fill-color-8': map.get($empty, '8'),
+    'fill-color-9': map.get($empty, '9'),
+  ),
+  $empty
+);

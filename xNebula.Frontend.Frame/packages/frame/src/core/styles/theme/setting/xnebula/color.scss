@@ -1,0 +1,99 @@
+$colors: (
+  'white': #fff,
+  'black': #000,
+  'primary': (
+    'base': #169ce3,
+  ),
+  'success': (
+    'base': #67c32a,
+  ),
+  'warning': (
+    'base': #e6a23c,
+  ),
+  'danger': (
+    'base': #f56c6c,
+  ),
+  'error': (
+    'base': #f56c6c,
+  ),
+  'info': (
+    'base': #909399,
+  ),
+);
+
+$bg-color: (
+  'page': #f2f3f5,
+  '': #fff,
+  'overlay': #fff,
+);
+
+$border-color: (
+  'base': #c9cdd4,
+  'darker': #bbbfc4,
+  'dark': #a2a5a9,
+  '': #c9cdd4,
+  'light': #e1e6ef,
+  'lighter': #d8dce3,
+  'extra-light': #eeeff1,
+);
+
+$box-shadow: (
+  '': (
+    0 12px 32px 4px rgb(0 0 0 / 4%),
+    0 8px 20px rgb(0 0 0 / 8%),
+  ),
+  'light': (
+    0 0 12px rgb(0 0 0 / 12%),
+  ),
+  'lighter': (
+    0 0 6px rgb(0 0 0 / 12%),
+  ),
+  'dark': (
+    0 16px 48px 16px rgb(0 0 0 / 8%),
+    0 12px 32px rgb(0 0 0 / 12%),
+    0 8px 16px -8px rgb(0 0 0 / 16%),
+  ),
+);
+
+$fill-color: (
+  'base': #fff,
+  'darker': #e6e8eb,
+  'dark': #ebedf0,
+  '': #f0f2f5,
+  'light': #f5f7fa,
+  'lighter': #fafafa,
+  'extra-light': #fafcff,
+  'blank': #fff,
+);
+
+$text-color: (
+  'base': #202023,
+  'primary': #0f1012,
+  'regular': #202023,
+  'secondary': #424348,
+  'placeholder': #a2a4a9,
+  'disabled': #838488,
+);
+
+$mask-color: (
+  '': rgb(255 255 255 / 90%),
+  'extra-light': rgb(255 255 255 / 30%),
+);
+
+$button: (
+  //   "": rgba(255, 255, 255, 0.5),
+  '': rgba(168, 171, 178, 1)
+);
+
+$empty: (
+  '0': #fff,
+  '1': #fcfcfd,
+  '2': #f8f9fb,
+  '3': #f7f8fc,
+  '4': #eeeff3,
+  '5': #edeef2,
+  '6': #e9ebef,
+  '7': #e5e7e9,
+  '8': #e0e3e9,
+  '9': #d5d7de,
+);

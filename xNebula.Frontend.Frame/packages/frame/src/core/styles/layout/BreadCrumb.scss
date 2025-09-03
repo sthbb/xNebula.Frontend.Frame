@@ -1,0 +1,22 @@
+@use '../prefix.scss' as *;
+
+.#{$prefixCls}bread-crumb {
+  display: flex;
+  float: right;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1rem;
+  white-space: nowrap;
+
+  .el-breadcrumb__item {
+    > .el-breadcrumb__inner {
+      color: var(--el-color-primary);
+    }
+
+    &:last-child {
+      > .el-breadcrumb__inner {
+        color: var(--el-text-color-regular);
+      }
+    }
+  }
+}

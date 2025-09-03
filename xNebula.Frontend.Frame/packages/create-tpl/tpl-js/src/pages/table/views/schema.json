@@ -1,0 +1,72 @@
+{
+  "ctype": "c-page",
+  "toolbar": {
+    "ctype": "c-form",
+    "inline": true,
+    "body": [
+      {
+        "ctype": "c-input-select",
+        "label": "table_kind",
+        "name": "EQP_TYPE"
+      }
+    ],
+    "buttons": [
+      {
+        "ctype": "c-button",
+        "content": "btn_query",
+        "type": "primary",
+        "events": {
+          "click": {
+            "actions": [
+              {
+                "actionType": "component",
+                "componentId": "alarmHist",
+                "methodName": "reload"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "body": [
+    {
+      "id": "alarmHist",
+      "ctype": "c-crud",
+      "pageMode": "client",
+      "columns": [
+        {
+          "type": "index",
+          "label": "table_seq",
+          "align": "center",
+          "fixed": "left",
+          "width": 60
+        },
+        {
+          "prop": "EVENT_TIME",
+          "label": "table_event"
+        },
+        {
+          "prop": "ALARM_ID",
+          "label": "table_id"
+        }
+      ],
+      "dataSource": {
+        "ctype": "api",
+        "atype": "restful",
+        "init": false,
+        "method": "post",
+        "reqData": {
+          "EQP_TYPE": "${EQP_TYPE}",
+          "CURR_PAGE": "${currentPage}",
+          "PAGE_SIZE": "${pageSize}"
+        },
+        "repFormat": {
+          "total": "${records.length}",
+          "records": "${records}"
+        },
+        "url": "/api/EQP/EqpManagement/GetAlarmHistList"
+      }
+    }
+  ]
+}
